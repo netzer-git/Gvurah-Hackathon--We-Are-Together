@@ -17,7 +17,7 @@
       <!-- NAVIGATION BAR -->
           <div id="nav_bar">
               <ul>
-                  <li class="nav_li"><a href="{{ url_for('create_project') }}">Add Project</a></li>
+                  <li class="nav_li"><a href="#add_project_div">Add Project</a></li>
                   <li class="nav_li"><a href="{{ url_for('projects') }}">Projects</a></li>
                   {% if not current_user.is_authenticated %}
                   <li class="nav_li"><a href="{{ url_for('login') }}">LogIn</a></li>
@@ -153,8 +153,47 @@ We have created an ecosystem that assimilates the memory of the Holocaust within
         </div>
     </div>
 
-    <div ip="add_project_form">
+    <div id="add_project_div">
+        <h1>Add your own project</h1>
+        <form id="add_project_form">
+            <div id="add_project_fields">
+                <div id="add_project_left">
+                    <div class="form_field">
+                        <label class="text_field_lbl">project name*</label><br><br>
+                        <input class="text_field_input" type="text">
+                    </div>
+                    <div class="form_field">
+                        <label class="text_field_lbl">description*</label><br><br>
+                        <textarea class="text_field_input" type="text" style="height: 110px;"></textarea>
+                    </div>
+                    <div class="form_field">
+                        <label class="text_field_lbl">category*</label><br><br>
+                        <input class="radio_selection" name="category_radio" type="radio"><label class="radio_text">development</label>
+                        <input class="radio_selection" name="category_radio" type="radio"><label class="radio_text">education</label>
+                        <input class="radio_selection" name="category_radio" type="radio"><label class="radio_text">creative</label>
+                        <input class="radio_selection" name="category_radio" type="radio"><label class="radio_text">volunteer</label>
+                    </div>
+                </div>
+                <div id="add_project_right">
+                    <div id="looking_for_div">
+                        <label class="text_field_lbl">looking for</label><br><br>
+                        <input class="looking_text_input" type="text" placeholder="Enter position*"><br>
+                        <input class="looking_text_input" type="text" placeholder="Enter position"><br>
+                        <input class="looking_text_input" type="text" placeholder="Enter position"><br>
+                        <input class="looking_text_input" type="text" placeholder="Enter position"><br>
+                        <input class="looking_text_input" type="text" placeholder="Enter position"><br>
+                    </div>
+                </div>
+            </div>
 
+            <div id="add_project_submit_button">
+                <a href="{{ url_for('home') }}">Submit</a>
+            </div>
+        </form>
     </div>
+    <div id="footer">
+        <h2>Copyright ©️ 2021,  We Are Together</h2>
+    </div>
+
 </body>
 </html>

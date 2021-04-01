@@ -167,7 +167,6 @@ button {
 }
 
 #search_img {
-  width: 24px;
   height: 24px;
   padding-right: 30px;
 
@@ -280,4 +279,49 @@ a:hover{
   color: #E9E9E9;
   text-align: right;
 
+}
+
+.the_project{
+  box-shadow: 7.76942px 7.76942px 38.8471px 2.33083px rgba(39, 92, 141, 0.1);
+  border-radius: 9.32331px 9.32331px 0 0;
+  padding: 30px 60px;
+  background: #1F78A4;
+  color: white;
+}
+
+.team_div {
+  box-shadow: 7.76942px 7.76942px 38.8471px 2.33083px rgba(39, 92, 141, 0.1);
+  border-radius: 0 0 9.32331px 9.32331px;
+  padding-bottom: 80px;
+  background: white;
+  color: black;
+}
+
+#partners_p{
+  text-align: center;
+  float: left;
+  padding: 5px 20px 20px 20px;
+}
+
+#join_button{
+  float: right;
+  width: 321px;
+  height: 57px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top:10px;
+  margin-right: 40px;
+  background: #32936F;
+  border-radius: 40px;
+  padding-top: 7px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+
+}
+
+#join_button a{
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
 }

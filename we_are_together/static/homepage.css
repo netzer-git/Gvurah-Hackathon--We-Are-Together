@@ -287,3 +287,106 @@ a:hover{
     color: white;
     text-decoration: none;
 }
+
+#add_project_div{
+    height: 800px;
+}
+
+#add_project_div h1{
+    margin-top: 130px;
+    margin-left: 200px;
+    color: #0B99E0;
+    font-weight: 600;
+    font-size: 55px;
+}
+
+
+#add_project_fields{
+    margin-top: 50px;
+    margin-left: 200px;
+    height: 500px;
+}
+
+.form_field{
+    margin-top: 30px;
+}
+
+.text_field_lbl{
+    font-weight: 600;
+    font-size: 16px;
+    color: #696F79;
+}
+
+.text_field_input{
+    background: #FFFFFF;
+    border: 1px solid #0B99E0;
+    box-shadow: rgba(0, 0, 0, 0.11) 0px 4px 10px 3px;
+    border-radius: 40px;
+    width: 415px;
+    height: 25px;
+    font-size: 16px;
+    outline: none;
+    padding: 20px;
+    resize: none;
+}
+
+#add_project_left{
+    float: left;
+}
+
+#add_project_right{
+    float: left;
+    margin-left: 300px;
+}
+
+#looking_for_div{
+    margin-top: 30px;
+}
+
+.looking_text_input{
+    margin-top: 5px;
+    height: 30px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 3px solid #0B99E0;
+    outline: none;
+}
+
+.radio_text{
+    color: #696F79;
+    margin-right: 10px;
+}
+
+#add_project_submit_button {
+    clear: both;
+    width: 321px;
+    height: 57px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 50px;
+    background: #32936F;
+    border-radius: 40px;
+    padding-top: 12px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#add_project_submit_button a{
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+#footer{
+    height: 120px;
+    padding-top: 100px;
+    background: #333333;
+    border-radius: 60%/ 70px 70px 0 0;
+}
+
+#footer h2{
+    width: 100%;
+    text-align: center;
+    font-size: 14.2578px;
+    color: #F7EEFF;
+}

@@ -83,7 +83,12 @@ class Project(db.Model):
         return is_user_in_project
 
     def is_full(self):
-        return self.join1 and self.join2 and self.join3 and self.join4 and self.join5
+        full1 = not self.need1 or (self.need1 and self.join1)
+        full2 = not self.need2 or (self.need2 and self.join2)
+        full3 = not self.need3 or (self.need3 and self.join3)
+        full4 = not self.need4 or (self.need4 and self.join4)
+        full5 = not self.need5 or (self.need5 and self.join5)
+        return full1 and full2 and full3 and full4 and full5
 
     def get_dict_of_partners(self):
         dict_of_partners = {}

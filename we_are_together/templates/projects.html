@@ -8,7 +8,7 @@
               <!-- SEARCH BAR -->
               <form role="search" id="form">
                   <div>
-                      <input type="search" id="query" name="q"
+                      <input type="search" id="query" name="project_filter_by_str"
                        placeholder="Search..."
                        aria-label="Search through site content">
                       <button>
@@ -39,7 +39,27 @@
                 <div id="project_text">
                     <div class="project_title">{{ project.project_name }}</div>
                     <div class="looking">Looking For:</div>
-                    <div class="positions">some positions...</div>
+                    <div class="positions">
+                        {% if project.need1 %}
+                        {{ project.need1 }}
+                        {% endif %}
+
+                        {% if project.need2 %}
+                        {{", " + project.need2 }}
+                        {% endif %}
+
+                        {% if project.need3 %}
+                        {{", " + project.need3 }}
+                        {% endif %}
+
+                        {% if project.need4 %}
+                        {{", " + project.need4 }}
+                        {% endif %}
+
+                        {% if project.need5 %}
+                        {{", " + project.need5 }}
+                        {% endif %}
+                    </div>
                     <div class="more_info"><a href="{{ url_for('view_project', project_id=project.id) }}">get more info&raquo;</a></div>
                 </div>
                 <div id="id">{{ project.id }}</div>

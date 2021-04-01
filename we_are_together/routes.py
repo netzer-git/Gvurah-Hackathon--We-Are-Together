@@ -31,6 +31,10 @@ def home():
 @app.route("/projects")
 def projects():
     project_filter = request.args.get('project_filter', None)
+    project_filter_by_str = request.args.get('project_filter_by_str', None)
+
+    #Project.query.filter(Project.project_name.contains(project_filter_by_str))
+
     if project_filter == (0 or None):
         defined_projects = Project.query.all()
     else:
