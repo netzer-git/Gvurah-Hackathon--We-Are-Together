@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block content %}
+    <!-- HEADER SECTION -->
+    <div>
+        <br>
+          <div id="title_div">
+              <h1>Join One Of Our Projects</h1>
+              <!-- SEARCH BAR -->
+              <form role="search" id="form">
+                  <div>
+                      <input type="search" id="query" name="q"
+                       placeholder="Search..."
+                       aria-label="Search through site content">
+                      <button>
+                          <img id="search_img" src="{{url_for('static', filename='search-icon-png-18.png')}}" alt="search">
+                      </button>
+                  </div>
+            </form>
+             <!-- NAVIGATION BAR -->
+              <div id="nav_bar">
+              <ul id="breadcrumb">
+                  <li class="nav_li"><a
+                          href="{{ url_for('projects')}}" id="clicked" >all projects</a></li>
+                  <li class="nav_li"><a href="{{ url_for('projects', project_filter=4)}}" >creative projects</a></li>
+                  <li class="nav_li"><a href="{{ url_for('projects', project_filter=1)}}" >development projects</a></li>
+                  <li class="nav_li"><a href="{{ url_for('projects', project_filter=2)}}" >volunteer</a></li>
+                  <li class="nav_li"><a href="{{ url_for('projects', project_filter=3)}}" >education projects</a></li>
+                  <li class="nav_li"><a href="{{ url_for('projects', project_filter=5)}}" >my projects </a></li>
+              </ul>
+              </div>
+          </div>
+      </div>
+
+    <!-- PROJECTS SECTION -->
+    {% for project in projects %}
+    <!--todo: limit the number of projects in a page-->
+        <div id="div_projects">
+            <div id="project_id">
+                <div id="project_text">
+                    <div class="project_title">{{ project.project_name }}</div>
+                    <div class="looking">Looking For:</div>
+                    <div class="positions">some positions...</div>
+                    <div class="more_info"><a href="{{ url_for('view_project', project_id=project.id) }}">get more info&raquo;</a></div>
+                </div>
+                <div id="id">{{ project.id }}</div>
+            </div>
+            <div class="category">{{ category_dict[project.category] }}</div>
+        </div>
+    {% endfor %}
+{% endblock content %}

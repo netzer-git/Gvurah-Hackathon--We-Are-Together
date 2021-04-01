@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>WeAreTogether</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='homepage.css') }}"/>
+  </head>
+<body>
+  <!-- HEADER SECTION -->
+  <div id="div_header">
+      <div id="top_bar_div">
+          <div id="logo">
+              <img src="{{url_for('static', filename='logo.png')}}" />
+          </div>
+
+      <!-- NAVIGATION BAR -->
+          <div id="nav_bar">
+              <ul>
+                  <li class="nav_li"><a href="{{ url_for('create_project') }}">Add Project</a></li>
+                  <li class="nav_li"><a href="{{ url_for('projects') }}">Projects</a></li>
+                  {% if not current_user.is_authenticated %}
+                  <li class="nav_li"><a href="{{ url_for('login') }}">LogIn</a></li>
+                  <li class="nav_li"><a href="{{ url_for('register') }}" class="nav_special">SignUp</a></li>
+                  {% else %}
+                  <li class="nav_li"><a href="{{ url_for('logout') }}" class="nav_special">Logout</a></li>
+                  {% endif %}
+              </ul>
+          </div>
+
+          <div id="logout_div">
+              <ul>
+
+              </ul>
+          </div>
+      </div>
+
+      <div>
+          <div id="title_div">
+              <h1>Welcome To Our</h1>
+              <h1>Project Hub</h1>
+          </div>
+      </div>
+  </div>
+    <div id="div_about">
+        <div id="text_about">
+            <h5>About Us</h5>
+            <h2>"Do and do not forget"</h2>
+            <p>An innovative national project - to make the memory of the Holocaust an engine of inspariation for creating a better future.
+We have created an ecosystem that assimilates the memory of the Holocaust within social. we remember from a place we want, and not just because we must.</p>
+            <a href="https://brave-together.com/">GO TO THE BRAVE TOGETHER WEBSITE</a>
+        </div>
+        <div id="image_about">
+            <img src="{{url_for('static', filename='bravepeople.png')}}" />
+        </div>
+    </div>
+    <div id="projects_div">
+        <div id="category_bar_div">
+            <a href="{{ url_for('projects', project_filter=1)}}">
+            <div class="category_card_div" style="background: #F3849F;">
+                <img src="{{url_for('static', filename='ballot_24px.png')}}" />
+                <h5>development</h5>
+                <p>Create tech projects in the spirit of our mission</p>
+            </div>
+            </a>
+
+            <a href="{{ url_for('projects', project_filter=3)}}">
+            <div class="category_card_div" style="background: #FFCB21;">
+                <img src="{{url_for('static', filename='ballot_24px.png')}}" />
+                <h5>education</h5>
+                <p>Create educational activities on Holocaust heroism</p>
+            </div>
+            </a>
+
+            <a href="{{ url_for('projects', project_filter=4)}}">
+            <div class="category_card_div" style="background: #926FF6;">
+                <img src="{{url_for('static', filename='ballot_24px.png')}}" />
+                <h5>creative</h5>
+                <p>Create artistic content that showcases stories of heroism</p>
+            </div>
+            </a>
+
+            <a href="{{ url_for('projects', project_filter=2)}}">
+            <div class="category_card_div" style="background: #32936F;">
+                <img src="{{url_for('static', filename='ballot_24px.png')}}" />
+                <h5>volunteer</h5>
+                <p>Volunteer with the hero community</p>
+            </div>
+            </a>
+
+        </div>
+        <div id="projects_title_div">
+            <h1>Join one of  our open projects,</h1>
+            <h1>our teams would love to have you!</h1>
+        </div>
+        <div id="project_cards">
+            <div class="project_card">
+                <div class="project_card_upper">
+                    <h2>Volunteer Website</h2>
+                    <p>Help us construct corona-friendly care-packages for our Holocaust Heroes, celebrating their birthdays in covid times.</p>
+                    <h3>Looking For:</h3>
+                    <h5>Software Engineer, Copywriter</h5>
+                </div>
+                <div class="project_card_lower">
+                    <h2>Development</h2>
+                    <h3>45</h3>
+                </div>
+            </div>
+
+            <div class="project_card">
+                <div class="project_card_upper">
+                    <h2>Volunteer Website</h2>
+                    <p>Help us construct corona-friendly care-packages for our Holocaust Heroes, celebrating their birthdays in covid times.</p>
+                    <h3>Looking For:</h3>
+                    <h5>Software Engineer, Copywriter</h5>
+                </div>
+                <div class="project_card_lower">
+                    <h2>Development</h2>
+                    <h3>45</h3>
+                </div>
+            </div>
+
+            <div class="project_card">
+                <div class="project_card_upper">
+                    <h2>Volunteer Website</h2>
+                    <p>Help us construct corona-friendly care-packages for our Holocaust Heroes, celebrating their birthdays in covid times.</p>
+                    <h3>Looking For:</h3>
+                    <h5>Software Engineer, Copywriter</h5>
+                </div>
+                <div class="project_card_lower">
+                    <h2>Development</h2>
+                    <h3>45</h3>
+                </div>
+            </div>
+
+            <div class="project_card">
+                <div class="project_card_upper">
+                    <h2>Volunteer Website</h2>
+                    <p>Help us construct corona-friendly care-packages for o.</p>
+                    <h3>Looking For:</h3>
+                    <h5>Software Engineer, Copywriter</h5>
+                </div>
+                <div class="project_card_lower">
+                    <h2>Development</h2>
+                    <h3>45</h3>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="more_projects_button">
+            <a href="{{ url_for('projects') }}">See More</a>
+        </div>
+    </div>
+
+    <div ip="add_project_form">
+
+    </div>
+</body>
+</html>

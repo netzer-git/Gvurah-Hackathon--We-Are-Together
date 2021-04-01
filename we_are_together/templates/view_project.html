@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>{{ current_project.project_name }}</h1>
+<p>{{ category_dict[current_project.id] }}</p>
+<br>
+<p>Project manager: {{ current_project.manager }}</p>
+<p> {{ current_project.description }}</p>
+<br><br>
+<p style="color: #0B99E0">Looking For:</p>
+<div>{{ current_project.need1 }}</div>
+<div>{{ current_project.need2 }}</div>
+<div>{{ current_project.need3 }}</div>
+<div>{{ current_project.need4 }}</div>
+<div>{{ current_project.need5 }}</div>
+<br><br>
+<h4>OUR TEAM</h4>
+<!-- TODO: ADD users that are part of the team -->
+{% if current_user.is_authenticated and already_in %}
+<a class="btn btn-outline-info" href="{{ url_for('view_project', project_id=current_project.id, user_join_num=-1) }}">
+        Leave
+</a>
+
+
+{% elif current_user.is_authenticated and not project_full %}
+<a class="btn btn-outline-info" href="{{ url_for('view_project', project_id=current_project.id, user_join_num=1) }}">
+        Join
+</a>
+
+{% elif project_full %}
+<a class="" href="#">
+        Full
+</a>
+
+{% else %}
+<a class="btn btn-outline-info" href="{{ url_for('login') }}">
+        Sign In
+</a>
+{% endif %}
+{% endblock content %}
